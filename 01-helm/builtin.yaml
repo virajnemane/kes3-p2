@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: {{ .Release.Name }}-builtin-object
+data:
+  chart_version: {{ .Chart.Version }}
+  kubeversion: {{ .Capabilities.KubeVersion.Version }}
+  helmversion: {{ .Capabilities.HelmVersion.Version }}
