@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: {{ .Release.Name }}-builtin-object
+data:
+  chart_version: {{ .Chart.Version }}
+  kubeversion: {{ .Capabilities.KubeVersion.Version }}
+  helmversion: {{ .Capabilities.HelmVersion.Version }}
+  dept: {{ .Values.dept }}
+  location: {{ .Values.infra.location| upper | quote }}
+  floor: {{ quote .Values.infra.floor }}
+  company: {{ .Values.company | default "ntms" | upper }}
+
+
+## helm instal ... --set company=netmagic set values at runtime
+##                   -f path-to-file/testvalues.yaml
+## look at functions https://helm.sh/docs/chart_template_guide/function_list/

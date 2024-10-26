@@ -1,0 +1,7 @@
+function: "IT"
+
+function: Devops
+dept: IT
+infra:
+  location: mumbai
+  floor: 2,3,4
